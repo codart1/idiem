@@ -4,6 +4,9 @@ import Helmet from 'react-helmet'
 
 import Header from '../components/header'
 import './index.scss'
+import { ThemeProvider } from 'styled-components';
+import { baseColors } from '../config';
+
 
 const Layout = ({ children, data }) => (
   <div>
@@ -15,7 +18,9 @@ const Layout = ({ children, data }) => (
       ]}
     />
     {/* <Header siteTitle={data.site.siteMetadata.title} /> */}
-    {children()}
+    <ThemeProvider theme={{baseColors}}>
+      {children()}
+    </ThemeProvider>
   </div>
 )
 

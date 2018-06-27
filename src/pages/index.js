@@ -3,34 +3,27 @@ import Link from 'gatsby-link'
 import styled from 'styled-components'
 
 import img from '../assets/img/edm.jpeg'
-import { baseColors } from '../config';
+import { Jumbo, Player } from '../components/organisms'
+import { H } from '../components/atoms'
 
-const Wrapper = styled.div`
+const Wrapper = styled.section`
   background-color: black;
-`
-const Header = styled.div`
-  filter: blur(4px);
-  background-position: center;
-  background-size: cover;
-  height: 100vh;
-  background-image: url(${img});
-
-  &:before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background-color: #0000007d;
-  }
 `
 
 const IndexPage = () => (
   <Wrapper>
-    <Header>
-      <h1>Idiem is a handpicked music collection</h1>
-    </Header>
-    <div>
-      blaahahahahaahaha
-    </div>
+    <Jumbo img={img}>
+      <div className="section">
+        <div className="columns is-centered">
+          <div className="column is-half">
+            {/* <H is={2} className="has-text-centered">Bộ sưu tập nhạc EDM hay đến từ producer VN</H> */}
+            <H is={2} className="has-text-centered">Best playlist ever ever ever and ever</H>
+            <Player/>
+          </div>
+        </div>
+      </div>
+    </Jumbo>
+    <div>blaahahahahaahaha</div>
   </Wrapper>
 )
 
